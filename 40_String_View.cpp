@@ -135,9 +135,9 @@ void string_view_ownership_issue() {
 int main()
 {
     string_basic();
-    remove_demo();
-    string_view_without_ntbs();
-    string_view_ownership_issue();
+    //remove_demo();
+    //string_view_without_ntbs();
+    //string_view_ownership_issue();
     // string_view_conversion();
     // small_string_optimization();
     // string_view_demo();
