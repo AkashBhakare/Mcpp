@@ -19,16 +19,22 @@ int mylib::Point::get_y(void) const {
 	return y;
 }
 
+/*Definition of Non-Member function*/
 void mylib::print_point(const Point& pref)
 {
 	std::cout << "X : " << pref.x << "\tY : " << pref.y << '\n';
 }
 
-mylib::Line::Line(Point&& s, Point&& e) :start(s), end(e)
+int mylib::A::foo()
 {
+	B bobj;
+	std::cout << "B::data : " << bobj.data << "\n";
+	return 0;
 }
 
-void mylib::Line::draw_line(void)
+int mylib::A::bar()
 {
-	std::cout << "Drawing line from : " << start.get_x();
+	B bobj;
+	//std::cout << "B::data : " << bobj.data << "\n";
+	return 0;
 }

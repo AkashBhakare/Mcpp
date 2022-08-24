@@ -1,36 +1,41 @@
 #pragma once
 #include "line.h"
+#include <iostream>
 namespace mylib {
 
-	class Line; //Foward declaration 
+	class Line; //Forward Declaration
 
 	class Point
 	{
 		//Non-member frunction is declared as friend
 		friend void print_point(const Point&);
-		//Member function declared as friend
-		//friend void Line::draw_line(void);
+		//Class Line has been declared as friend to Point
+		friend class Line;
 	private:
 		int x;
 		int y;
 	public:
 		Point();
-		Point(int x, int y);
+		explicit Point(int x, int y);
 		int get_x(void) const;
 		int get_y(void) const;
-	};
+	}; //End of class declaration
 
 	//Non-Member free standing function 
 	void print_point(const Point&);
 
-	class Line
-	{
-	private:
-		Point& start;
-		Point& end;
 
+	class A {
 	public:
-		Line(Point&& start, Point&& end);
-		void draw_line(void);
+		int foo(); //define later
+		int bar();
 	};
+
+
+	class B {
+		int data = 100;
+		//Member function of class A is made friend of Class B
+		friend int A::foo();
+	};
+
 }
